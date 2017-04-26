@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory >
+        <!-- mysql数据库驱动 -->
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <!-- mysql数据库名称 -->
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/hibernate</property>
+        <!-- 数据库的登陆用户名 -->
+        <!-- 数据库的登陆密码 -->
+        <!-- 方言：为每一种数据库提供适配器，方便转换 -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+
+        <property name="hibernate.format_sql">false</property>
+        <property name="show_sql">true</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">123456</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hibernate.current_session_context_class">thread</property>
+
+        <mapping resource="Book.hbm.xml"></mapping>
+        <mapping resource="BookType.hbm.xml"></mapping>
+        <mapping resource="User.hbm.xml"></mapping>
+        <mapping class="model.Idcard"></mapping>
+        <mapping class="model.Student"></mapping>
+    </session-factory>
+</hibernate-configuration>

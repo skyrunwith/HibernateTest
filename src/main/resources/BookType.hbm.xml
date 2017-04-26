@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="model.BookType" table="booktype">
+        <id name="id" column="bid">
+            <generator class="native"></generator>
+        </id>
+        <property name="name" column="name"></property>
+
+        <set name="books"  table="book"  lazy="true" cascade="all">
+            <key column="bid"></key>
+            <one-to-many class="model.Book" ></one-to-many>
+        </set>
+    </class>
+</hibernate-mapping>
